@@ -1,0 +1,103 @@
+Create a Django Project Step:
+check django Install or Not
+>:django-admin --version
+show version
+Go to your Path 
+type commad
+>:django-admin startproject PROJECT_NAME
+Note: PROJECT_NAME= exam blog
+cd PROJECT_NAME
+>: here you have file structure
+	blog
+	 	blog-init.py,urls,setting.wsgi,asgi
+		manage.py
+python mange.py
+you have display list command
+again
+python manage.py runserver
+you got error
+OperationalError at /admin/login/
+no such table: auth_user
+solution type:
+>:python manage.py migrate
+create admin account
+>:python manage.py createsuperuser
+
+How to read html page
+step :1
+create an folder inside of root directory base_dir
+    templates
+    pages
+from django.shortcuts import render # import render function
+def home(obj):
+    return render(obj,'home.html') #render(object,templates_name in string,context=dict format)
+ error
+    TemplateDoesNotExist at /home/
+    check your html file name correct or not
+    check your html page is correct or not
+ step :2
+    add your directory in setting.py
+  error
+  context must be a dict rather than str/int/list
+ def home(obj):
+    data={}
+    return render(obj,'home.html',context=data)
+ def home(obj):
+    data=dict()
+    return render(obj,'home.html',context=data)
+
+ def home(obj):
+    data=dict()
+    return render(obj,'home.html',data)
+ def home(obj):
+    return render(obj,'home.html',{})
+
+ how to send any variable value in html page
+  def home(obj):
+    mytext ="hello"
+    mydic ={
+        'text':mytext
+    }
+    return render(obj,'home.html',mydict)
+
+how to get variable in html page
+go to page write like this
+{{text}} # inside of dubble carly bracket pass key in python dict
+
+
+
+--------------------------------------
+module Name:
+pip install django==3.0
+pip install pillow
+pip install djangorestframework
+
+
+pip uninstall django
+again
+pip install django==3.0
+--------------------------------------
+
+
+def demo(request):
+    return --------
+
+
+ check request return
+ print(request)
+<WSGIRequest: GET '/demo/'> object
+request.method GET/POST format of dict
+request.session
+requst.GET['']
+
+factorial
+i =5
+5*4*3*2*1
+120
+
+-----
+p
+pizzza
+    name=''
+    price=''
+
